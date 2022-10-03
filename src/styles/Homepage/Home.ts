@@ -3,8 +3,13 @@ import walletBg from "../../images/walletBg.png";
 
 export const Body = styled.div`
   padding: 24px;
-  /* width: 100vw; */
-
+  section{
+    span{
+      font-size: 12px;
+      font-weight: 400;
+      padding-top: 8px;
+    }
+  }
 `
 
 export const UserHeader = styled.div`
@@ -42,7 +47,6 @@ export const UserHeader = styled.div`
   }
 `
 export const Wallet = styled.div`
-  /* width: 100%; */
   height: 120px;
   border-radius: 16px;
   display: flex;
@@ -50,9 +54,9 @@ export const Wallet = styled.div`
   justify-content: space-between;
   padding:0 24px;
   color: white;
-  margin-top: 24px;
+  margin: 24px 0;
   background-image: url(${walletBg});
-  /* background-color: #07495D; */
+  background-color: #07495D;
   background-repeat: no-repeat;
   background-position: center;
   .wallet_balance{
@@ -78,5 +82,27 @@ export const Wallet = styled.div`
     justify-content: center;
     font-size: 32px;
     color: white;
+  }
+`
+
+export const Update = styled.div`
+  padding: 16px;
+  width: 226px;
+  height: 126px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 6px 8px rgba(13, 56, 113, 0.02);
+  margin-top: 10px;
+  p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  span{
+    font-weight: 700;
+    font-size: 10px;
+    text-align: center;
+    color: rgba(28, 28, 40, 0.5);
   }
 `
