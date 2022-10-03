@@ -7,7 +7,7 @@ export default function UserAvatar() {
         <img src={profile} alt="user_image" />
       </div>
       <div className="user_info">
-        <h3>Hello Sarah!</h3>
+        <h3>Hello Sarah</h3>
         <span>Monday, 12th Feb, 2021</span>
       </div>
     </UserHeader>
