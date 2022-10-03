@@ -8,7 +8,12 @@ export const Body = styled.div`
 export const UserHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  justify-content: space-between;
+  .user{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .user_image{
     border-radius: 50%;
     height: 32px;

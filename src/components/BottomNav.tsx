@@ -8,12 +8,12 @@ export default function BottomNav() {
   let activeStyle = {
     color: "var(--brand)",
     fill: "var(--brand)",
-    fontWeight: "400",
+    fontWeight: 400,
     transition: "all 0.2 ease-in",
   };
   let dormantStyle = {
     color: "#1C1C2850",
-    fontWeight: "700",
+    fontWeight: 700,
     fill: "#DCDCDC",
   };
   return (
