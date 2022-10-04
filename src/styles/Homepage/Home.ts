@@ -5,11 +5,11 @@ import walletBg from "../../images/walletBg.png";
 export const Body = styled.div`
   padding: 24px;
   section{
-    margin-top: 24px;
+    padding:16px 0 0;
     span{
       font-size: 12px;
       font-weight: 400;
-      padding-top: 8px;
+      /* padding-top: 8px; */
       text-transform: capitalize;
       color: var(--brand);
     }
@@ -64,7 +64,7 @@ export const Wallet = styled.div`
   justify-content: space-between;
   padding:0 24px;
   color: white;
-  margin: 24px 0 0;
+  margin: 24px 0 8px;
   background-image: url(${walletBg});
   background-color: #07495D;
   background-repeat: no-repeat;
@@ -102,7 +102,7 @@ export const Update = styled.div`
   height: 126px;
   border-radius: 16px;
   box-shadow: 0px 2px 6px 8px rgba(13, 56, 113, 0.02);
-  margin-top: 10px;
+  margin: 10px 0;
   .case{
     line-height: 14px;
     p{
