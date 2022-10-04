@@ -12,11 +12,35 @@ export default function Homepage() {
       <WalletBalance />
       <section>
         <span> updates </span>
-        <Updates />
+        <div className="list">
+          <Updates />
+          <Updates />
+          <Updates />
+          <Updates />
+          <Updates />
+        </div>
       </section>
       <section>
         <span> spots near you </span>
-        <CafeSpots />
+        <div className="list">
+          <CafeSpots />
+          <CafeSpots />
+          <CafeSpots />
+          <CafeSpots />
+          <CafeSpots />
+          <CafeSpots />
+        </div>
+      </section>
+      <section>
+        <span> recent transactions </span>
+        <div className="list">
+          <Updates />
+          <Updates />
+          <Updates />
+          <Updates />
+          <Updates />
+          <Updates />
+        </div>
       </section>
       <BottomNav />
     </Body>

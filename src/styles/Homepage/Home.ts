@@ -13,6 +13,12 @@ export const Body = styled.div`
       text-transform: capitalize;
       color: var(--brand);
     }
+    .list{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow-x: scroll;
+    }
   }
 `
 
@@ -90,6 +96,7 @@ export const Wallet = styled.div`
 `
 
 export const Update = styled.div`
+  flex-shrink: 0;
   padding: 16px;
   width: 226px;
   height: 126px;
@@ -135,6 +142,7 @@ export const DirectionButton = styled.button`
   transition: all 0.2s ease-in
 `
 export const Cafe = styled.div`
+  flex-shrink: 0;
   padding: 16px;
   width: 226px;
   height: 140px;
