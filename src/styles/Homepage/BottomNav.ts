@@ -8,10 +8,11 @@ export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  border-top: 1px solid #0D387130;
   position: absolute;
   bottom: 0;
   left: 0;
-  border-top: 1px solid #0D387130;
+  right: 0;
   .icon{
     text-align: center;
     a{
@@ -23,5 +24,28 @@ export const Nav = styled.div`
       font-size: 8px;
       text-transform: capitalize;
     }
+  }
+`
+export const QRButton = styled.div`
+  outline: none;
+  background-color: var(--brand);
+  color: white;
+  height: 54px;
+  border-radius: 50px;
+  width: 137px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  transition: all 0.2s ease-in;
+  position: absolute;
+  bottom: 112px;
+  right: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    margin-left: 10px;
   }
 `

@@ -3,7 +3,9 @@ import cafe from "../../images/cafe.png";
 import walletBg from "../../images/walletBg.png";
 
 export const Body = styled.div`
-  padding: 24px;
+  padding: 24px 24px 0;
+  height: 100vh;
+  position: relative;
   section{
     padding:16px 0 0;
     span{
@@ -20,8 +22,15 @@ export const Body = styled.div`
       overflow-x: scroll;
     }
   }
+  .bottom{
+  }
 `
-
+export const Container = styled.div`
+  height: 90%;
+  overflow: scroll;
+  padding-bottom: 30px;
+  position: relative;
+`
 export const UserHeader = styled.div`
   display: flex;
   align-items: flex-start;
@@ -92,6 +101,8 @@ export const Wallet = styled.div`
     justify-content: center;
     font-size: 32px;
     color: white;
+    outline: 0;
+    border: none;
   }
 `
 

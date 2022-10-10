@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import App from "./App";
+import Detailspage from "./pages/Details/Detailspage";
 import Homepage from "./pages/Homepage";
 import KYCOutlet from "./pages/KYC";
 import BVN from "./pages/KYC/BVN";
@@ -39,7 +40,10 @@ root.render(
           <Route path="password" element={<PasswordSetup />} />
           <Route path="login" element={<Login />} />
           <Route path="reset" element={<Reset />} />
-          <Route path="home" element={<Homepage />} />
+          <Route path="home" element={<Homepage />}>
+            <Route path="spots" element={<KYC />} />
+          </Route>
+          <Route path="details" element={<Detailspage />} />
           <Route path="wallet" element={<Wallet />} />
           <Route path="profile" element={<Profile />} />
         </Routes>
