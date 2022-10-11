@@ -1,6 +1,7 @@
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { HiHeart } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import BottomNav from "../../components/BottomNav";
 import CafeSpots from "../../components/CafeSpots";
 import {
   CafeImages,
@@ -53,6 +54,7 @@ export default function Detailspage(props: any) {
           vacation.
         </span>
       </ReviewContainer>
+      <BottomNav />
     </DetailBody>
   );
 }

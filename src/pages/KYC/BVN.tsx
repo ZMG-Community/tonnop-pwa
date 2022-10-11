@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { ButtonGroup, FormSelect, PageTitle } from "../../styles/KYC/KYC";
@@ -6,6 +7,14 @@ import { RegisterBody, RegisterFormHeader } from "../../styles/Register/Register
 
 export default function BVN() {
   let navigate = useNavigate();
+  const [value, setValue] = useState<string>("");
+  function handleChange(e: any) {
+    if (value.length < 10) {
+      setValue(e?.target.value);
+    } else {
+      return;
+    }
+  }
   return (
     <RegisterBody>
       <PageTitle>
@@ -26,7 +35,7 @@ export default function BVN() {
         </div>
         <div className="block">
           <label> BVN: </label>
-          <input type="number" placeholder="1234567890" />
+          <input type="number" placeholder="1234567890" name="bvn" value={value} onChange={handleChange} />
         </div>
       </FormSelect>
       <ButtonGroup>

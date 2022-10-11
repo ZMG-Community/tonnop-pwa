@@ -1,6 +1,6 @@
 import axios from "axios";
 import { atom } from "recoil";
-import * as Yup from "yup";
+import { LogInType, SendOTPType, SignupType } from "./types";
 
 const newRecord = atom({
   key: "userRecord",
@@ -146,20 +146,64 @@ const initialUser: initialUser = {
   phone_number: "",
 };
 
-const SignUpValidations = Yup.object().shape({
-  first_name: Yup.string().required("Required").min(4, "Atleast 4 characters"),
-  last_name: Yup.string().required("Required").min(4, "Atleast 4 characters"),
-  email: Yup.string().required("Required").min(4, "Atleast 4 characters"),
-  phone_number: Yup.string().required("Required").min(10, "Atleast 10 characters"),
-  password: Yup.string().min(8, "Atleast 8 characters")
-});
 
+async function Signup(data: SignupType) {
+  var config = {
+    method: 'post',
+    url: 'http://localhpost:8000/api/auth/register',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data
+  };
+
+  try {
+    await axios(config)
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+async function TonnopLogin(data: LogInType) {
+  var config = {
+    method: 'post',
+    url: 'http://localhost:8000/api/auth/login',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data
+  };
+
+  try {
+    await axios(config)
+  } catch (error) {
+    console.log(error)
+  }
+}
+async function SendOTP(data: SendOTPType) {
+  var config = {
+    method: 'post',
+    url: 'http://localhpost:8000/api/auth/verify-otp',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data
+  };
+  try {
+    await axios(config)
+  } catch (error) {
+    console.log(error)
+  }
+}
 export {
   ListRecords,
   getAuthToken,
   regUser,
   initialUser,
-  SignUpValidations,
   newRecord,
   userEmail,
+  Signup,
+  TonnopLogin
 };
+
+

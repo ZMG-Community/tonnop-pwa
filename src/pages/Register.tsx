@@ -3,17 +3,19 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { SolidButton } from "../styles/Onboarding/onboard";
 import { RegisterBody, RegisterButton, RegisterFormBody, RegisterFormHeader } from "../styles/Register/Register";
-import { initialUser, regUser, SignUpValidations } from "../utils/helpers";
+import { Signup } from "../utils/helpers";
+import { tonnopUser } from "../utils/initials";
+import { TonnopUserValidation } from "../utils/validations";
 
 export default function Register() {
   let navigate = useNavigate();
   return (
     <Formik
-      initialValues={initialUser}
+      initialValues={tonnopUser}
       onSubmit={(registervalues) => {
-        regUser(registervalues);
+        Signup(registervalues);
       }}
-      validationSchema={SignUpValidations}
+      validationSchema={TonnopUserValidation}
     >
       {({ values, handleSubmit, handleChange, handleBlur, errors, touched }) => {
         return (
@@ -32,24 +34,24 @@ export default function Register() {
                   <label> First name:</label>
                   <input
                     autoComplete="first name"
-                    value={values.first_name}
+                    value={values.firstName}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     type="text"
                     placeholder="First Name"
-                    name="first_name"
+                    name="firstName"
                   />
                 </div>
                 <div className="block">
                   <label> Last name:</label>
                   <input
                     autoComplete="last name"
-                    value={values.last_name}
+                    value={values.lastName}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     type="text"
                     placeholder="Last Name"
-                    name="last_name"
+                    name="lastName"
                   />
                 </div>
                 <div className="block">
@@ -68,12 +70,12 @@ export default function Register() {
                   <label> Phone Number:</label>
                   <input
                     autoComplete="phone_number"
-                    value={values.phone_number}
+                    value={values.phoneNumber}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     type="tel"
                     placeholder="Phone Number"
-                    name="phone_number"
+                    name="phoneNumber"
                   />
                 </div>
                 <div className="block">
@@ -92,7 +94,7 @@ export default function Register() {
             </RegisterFormBody>
             <RegisterButton>
               <SolidButton
-                disabled={errors.email || errors.first_name || errors.password ? true : false}
+                disabled={errors.email && errors.firstName && errors.password ? true : false}
                 onClick={() => {
                   handleSubmit();
                   navigate("/verify");
