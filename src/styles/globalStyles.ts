@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         --active: #FF9220;
         --progress: #E4E3E3;
         --text-progress: #1C1C28;
+        --text-light: #1C1C2850;
       }
       #root{
         margin:0 auto;

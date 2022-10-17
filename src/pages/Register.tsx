@@ -14,6 +14,7 @@ export default function Register() {
       initialValues={tonnopUser}
       onSubmit={(registervalues) => {
         Signup(registervalues);
+        console.log("submitted the values: " + registervalues);
       }}
       validationSchema={TonnopUserValidation}
     >
@@ -94,10 +95,10 @@ export default function Register() {
             </RegisterFormBody>
             <RegisterButton>
               <SolidButton
-                disabled={errors.email && errors.firstName && errors.password ? true : false}
+                disabled={errors.email || errors.firstName || errors.password ? true : false}
                 onClick={() => {
                   handleSubmit();
-                  navigate("/verify");
+                  // navigate("/verify"); 
                 }}
                 type="submit"
               >
